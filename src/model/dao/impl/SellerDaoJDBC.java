@@ -108,7 +108,7 @@ public class SellerDaoJDBC implements SellerDao{
 
             while(rs.next()){
 
-                Department dep = map.get(rs.getInt("DeppartmentId"));
+                Department dep = map.get(rs.getInt("DepartmentId"));
                 if( dep == null){
                     dep = instatiateDepartment(rs);
                     map.put(rs.getInt("DepartmentId"), dep);
@@ -126,7 +126,6 @@ public class SellerDaoJDBC implements SellerDao{
             DB.closeResultSet(rs);
             DB.closeStatement(st);
         }
-
     }
 
     @Override
